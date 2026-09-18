@@ -1,0 +1,91 @@
+:root {
+  --ink: #243238;
+  --muted: #65777a;
+  --line: #d8e3e0;
+  --paper: #f7faf7;
+  --panel: #ffffff;
+  --accent: #e26d46;
+  --teal: #4e8881;
+  --shadow: 0 16px 40px rgba(36, 50, 56, 0.08);
+}
+
+* { box-sizing: border-box; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+.page-shell { min-height: 100vh; padding: 48px clamp(20px, 5vw, 72px); }
+.check-in-page { display: grid; place-items: center; background: radial-gradient(circle at 15% 15%, #e6f1eb 0, transparent 34%), var(--paper); }
+.check-in-content { width: min(100%, 680px); padding: clamp(28px, 6vw, 72px); background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 16px; color: var(--ink); font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.04em; }
+h2 { margin-bottom: 18px; color: var(--ink); font-size: 1.3rem; }
+h3 { margin-bottom: 8px; color: var(--ink); }
+.page-intro { max-width: 48ch; margin-bottom: 42px; color: var(--muted); }
+.mood-selector { display: grid; gap: 28px; }
+.option-group, .form-section fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.option-group legend, .form-section legend { margin-bottom: 10px; color: var(--ink); font-size: 0.85rem; font-weight: 750; }
+.option-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.option-button { padding: 10px 13px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); background: var(--panel); }
+.option-button:hover, .option-button.selected { border-color: var(--teal); color: var(--ink); background: #eaf4f0; }
+.primary-button, .secondary-button { border: 0; border-radius: 6px; font-weight: 750; }
+.primary-button { padding: 14px 18px; color: #fff; background: var(--accent); }
+.primary-button:hover { background: #c95735; }
+.continue-button { margin-top: 40px; }
+.dashboard-page { min-height: 100vh; padding-top: 22px; padding-bottom: 22px; background: var(--paper); overflow: hidden; }
+.dashboard-header { display: flex; align-items: center; justify-content: space-between; gap: 32px; max-width: 1440px; min-height: 58px; margin: 0 auto 20px; }
+.dashboard-brand h1 { margin: 0; font-size: 1.65rem; letter-spacing: -0.03em; }
+.dashboard-header .mood-selector { width: min(100%, 400px); padding: 10px 14px; border: 1px solid var(--line); background: var(--panel); }
+.compact { display: flex; gap: 10px; }
+.compact-control { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 7px; color: var(--muted); font-size: 0.78rem; font-weight: 700; }
+.compact-control select { max-width: 145px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: #fbfdfb; font-size: 0.78rem; }
+.dashboard-layout { display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); gap: 20px; height: calc(100vh - 122px); max-width: 1440px; margin: 0 auto; align-items: stretch; }
+.dashboard-sidebar { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 18px; min-height: 0; }
+.sidebar-actions { display: grid; gap: 10px; }
+.action-button { padding: 12px 14px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--panel); font-weight: 750; text-align: left; }
+.action-button:hover { border-color: var(--teal); background: #eaf4f0; }
+.form-section, .calendar-view { border: 1px solid var(--line); background: var(--panel); box-shadow: 0 8px 24px rgba(36, 50, 56, 0.04); }
+.form-section { display: grid; gap: 14px; padding: 22px; }
+.modal-dialog .form-section { overflow-y: auto; border: 0; box-shadow: none; }
+.section-heading { margin-bottom: 2px; }
+.section-heading h2 { margin-bottom: 0; }
+.form-section label { display: grid; gap: 6px; color: var(--muted); font-size: 0.8rem; font-weight: 700; }
+.form-section input:not([type='radio']):not([type='checkbox']), .form-section select, .form-section textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: #fbfdfb; }
+.form-section textarea { resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice-row, .days-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.choice { display: flex !important; grid-template-columns: auto 1fr !important; align-items: center; gap: 6px !important; font-weight: 500 !important; }
+.days-grid { gap: 8px 12px; }
+.secondary-button { padding: 10px; color: var(--teal); background: #eaf4f0; }
+.recommendation { min-height: 0; align-content: center; background: #fff8e9; border-color: #f1dfb8; }
+.recommendation h2 { margin-bottom: 12px; }
+.muted { color: var(--muted); font-size: 0.88rem; }
+.recommendation ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.84rem; }
+.recommendation-actions { display: flex; justify-content: flex-start; }
+.calendar-view { min-height: 0; overflow: hidden; padding: 20px; }
+.calendar-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+.calendar-heading h2 { margin-bottom: 0; }
+.calendar-date { color: var(--muted); font-size: 0.85rem; }
+.calendar-grid { display: grid; grid-template-columns: 54px repeat(5, minmax(70px, 1fr)); overflow: auto; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.calendar-corner, .calendar-day, .calendar-hour, .calendar-cell { min-height: 52px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.calendar-day { display: grid; place-items: center; min-height: 42px; color: var(--ink); background: #f1f7f3; font-size: 0.8rem; font-weight: 750; }
+.calendar-row { display: contents; }
+.calendar-hour { padding: 8px 6px; color: var(--muted); font-size: 0.7rem; text-align: right; }
+.calendar-cell { background: linear-gradient(90deg, transparent 49%, #edf2ef 50%, transparent 51%); }
+.calendar-events { display: grid; gap: 8px; margin-top: 16px; }
+.calendar-event { display: flex; justify-content: space-between; gap: 12px; padding: 9px 11px; border-left: 3px solid var(--accent); background: #fff5ef; color: var(--ink); font-size: 0.8rem; }
+.calendar-event span { color: var(--muted); text-align: right; }
+.calendar-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; color: var(--muted); font-size: 0.8rem; }
+.calendar-legend span { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+.task-dot { background: var(--teal); }
+.suggested-dot { background: #d9bf78; }
+.form-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.cancel-button { padding: 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); background: var(--panel); }
+.modal-overlay { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 24px; background: rgba(26, 40, 40, 0.48); }
+.modal-dialog { width: min(100%, 620px); max-height: min(820px, calc(100vh - 48px)); overflow: hidden; border: 1px solid var(--line); background: var(--panel); box-shadow: var(--shadow); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px 0; }
+.modal-header h2 { margin: 0; }
+.close-button { width: 34px; height: 34px; border: 0; border-radius: 50%; color: var(--muted); background: transparent; font-size: 1.7rem; line-height: 1; }
+.close-button:hover { color: var(--ink); background: #edf2ef; }
+@media (max-width: 900px) { .dashboard-page { overflow: visible; } .dashboard-header { align-items: stretch; flex-direction: column; } .dashboard-header .mood-selector { width: 100%; } .dashboard-layout { grid-template-columns: 1fr; height: auto; } .calendar-view { min-height: 560px; } .recommendation { min-height: 220px; } }
+@media (max-width: 520px) { .page-shell { padding: 24px 14px; } .check-in-content { padding: 24px 18px; } .form-row { grid-template-columns: 1fr; } .calendar-view { padding: 16px; } }

@@ -1,0 +1,5 @@
+function RecommendedTask({ task, onConfirm, onComplete }) {
+	return <section className="recommendation form-section"><p className="eyebrow">Suggested for you</p><h2>Recommended task</h2>{task ? <><h3>{task.title || 'Untitled task'}</h3><p className="muted">This is the first unfinished task in your local task list.</p><ul><li>Current status: {task.status}</li><li>{task.duration ? `${task.duration} minute estimate` : 'No duration set'}</li><li>{task.category || 'No category'}</li></ul><div className="recommendation-actions">{task.status === 'unscheduled' && <button className="secondary-button" type="button" onClick={() => onConfirm(task.id)}>Confirm task</button>}{task.status === 'confirmed' && <button className="secondary-button" type="button" onClick={() => onComplete(task.id)}>Mark complete</button>}</div></> : <><h3>Finish Database Homework</h3><p className="muted">Add a task to see your first unfinished task here.</p><ul><li>Deadline is soon</li><li>Fits your available time</li><li>Matches your current energy</li></ul></>}</section>
+}
+
+export default RecommendedTask
